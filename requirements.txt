@@ -1,0 +1,39 @@
+# Aquarium Object Detection - dependencies
+#
+# Install:
+#     pip install -r requirements.txt
+#
+# On Google Colab, torch/torchvision/numpy/matplotlib/Pillow are preinstalled;
+# only `roboflow` is actually missing, so the notebook installs just that.
+#
+# GPU builds: the versions below install the CPU wheels on a machine without
+# CUDA. For a specific CUDA build, follow https://pytorch.org/get-started/
+# before installing the rest of this file.
+
+# ---- core ----------------------------------------------------------------
+torch>=2.0.0,<3.0.0
+torchvision>=0.15.0,<1.0.0
+numpy>=1.24.0,<3.0.0
+Pillow>=9.5.0
+matplotlib>=3.7.0
+
+# ---- dataset access ------------------------------------------------------
+# Only needed by scripts/download_data.py. If you place the dataset manually
+# (see README section 3) this can be skipped.
+roboflow>=1.1.0
+
+# ---- notebook ------------------------------------------------------------
+jupyter>=1.0.0
+ipykernel>=6.20.0
+
+# ---- tests ---------------------------------------------------------------
+pytest>=7.3.0
+
+# ---------------------------------------------------------------------------
+# Versions this project was developed and verified against:
+#   Python 3.10 / 3.12
+#   torch 2.x, torchvision 0.2x
+#   numpy 2.x, matplotlib 3.x, Pillow 11.x
+# Exact versions of the machine that produced the submitted results are
+# recorded in results/metrics.json under "hardware", and inside every
+# checkpoint under "hardware".

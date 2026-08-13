@@ -1,0 +1,40 @@
+# Keep the submission archive clean.
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+venv/
+.venv/
+*.egg-info/
+
+# Dataset — not shipped; see README section 3 for how to fetch it.
+data/train/
+data/valid/
+data/test/
+data/*.yaml
+data/_download/
+
+# Generated results. Delete before a clean rerun; keep the folders themselves.
+results/*.json
+results/*.md
+results/figures/*.png
+results/predictions/
+
+# Trained weights are large. Keep checkpoints/scratch_best.pt in the archive
+# (~19 MB) and regenerate the Faster R-CNN one if the size limit demands it —
+# see README section 6. The Faster R-CNN checkpoint is ~158 MB, which is over
+# GitHub's 100 MB hard per-file limit regardless.
+checkpoints/fasterrcnn_best.pt
+
+# Exported copy of the notebook. Regenerate with
+# `jupyter nbconvert --to html main_project.ipynb`; the .ipynb is the entry
+# point and shipping both doubles the repo for no added information.
+main_project.html
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
+.vscode/
+.idea/
